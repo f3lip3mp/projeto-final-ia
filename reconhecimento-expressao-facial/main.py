@@ -33,3 +33,18 @@ while video.isOpened():
 
 
 video.release()
+
+
+imgpath = '' #coloque o caminho inteiro da imagem
+
+
+try:
+    image = cv2.imread(imgpath)
+    if image is not None:
+        analyze = DeepFace.analyze(image, actions=['emotion'])
+        print(analyze[0]['dominant_emotion'])
+    else:
+        print("Erro no carregamento da imagem")
+except Exception as e:
+    print("An error occurred:", e)
+
