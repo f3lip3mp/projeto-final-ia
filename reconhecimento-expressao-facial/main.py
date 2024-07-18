@@ -13,7 +13,23 @@ while video.isOpened():
     ret, frame = video.read()
     #conversor de frame para escala cinza 
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    #detector
+    face = face_cascade.detectMultiScale(gray, scaleFactor=1.1,minNeighbors=5)
+
+    for x,y,w,h in face:
+        img = cv2.rectangle(frame,(x,y),(x+w,y+h),(0,0,255),1)
+        try:
+            #analisa emoções da face
+            analyze = DeepFace.analyze(frame, actions=['emotion'])
+            #imprime a emoção dominante
+            print(analyze[0]['dominant_emotion'])
+        except:
+            print('Rosto não identificado')
 
     cv2.imshow('video',frame)
-    
+    key = cv2.waitKey(1)
+    if key==ord('q'):
+        break
+
+
 video.release()
