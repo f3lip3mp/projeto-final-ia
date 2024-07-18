@@ -16,6 +16,7 @@ Este projeto utiliza OpenCV e técnicas de Inteligência Artificial para detecta
 - OpenCV
 - TensorFlow ou PyTorch
 - Modelos de Redes Neurais Convolucionais (CNNs)
+- DeepFace
 
 ## Instalação
 
@@ -24,7 +25,7 @@ Este projeto utiliza OpenCV e técnicas de Inteligência Artificial para detecta
 - Python 3.7+
 - OpenCV
 - TensorFlow ou PyTorch
-- Numpy
+- DeepFace
 
 ### Passos para Instalação
 
@@ -39,8 +40,8 @@ Este projeto utiliza OpenCV e técnicas de Inteligência Artificial para detecta
     pip install -r requirements.txt
 
 ### Como Usar
-1. Exemplo de uso para imagens
-    python [nome do script] --input caminho/para/sua/imagem.jpg
-2. Exemplo de uso para vídeos
-    python [nome do script] --input caminho/para/seu/video.mp4
-
+1. Exemplo de uso
+    - Abre o terminal
+    - Digite o comando `python caminho-da-pasta/main.py`
+    - A sua webcam vai iniciar! Caso não inicie, verifique a linha 10 do código main.py
+    - Analise a classificação dos sentimentos através do terminal
